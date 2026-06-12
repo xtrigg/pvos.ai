@@ -742,3 +742,79 @@ li::before {
     grid-template-columns: 1fr;
   }
 }
+
+/* PVOS v2 hero: real product-system image as the first-viewport background. */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: none;
+  min-height: 82vh;
+  margin: 0;
+  padding: clamp(72px, 10vw, 132px) clamp(18px, 7vw, 136px) clamp(72px, 8vw, 118px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url("/assets/pvos-hero-system.png");
+  background-size: cover;
+  background-position: center right;
+  transform: scale(1.01);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(4, 12, 14, 0.96) 0%, rgba(4, 12, 14, 0.88) 30%, rgba(4, 12, 14, 0.42) 62%, rgba(4, 12, 14, 0.18) 100%),
+    linear-gradient(180deg, rgba(4, 12, 14, 0.34) 0%, rgba(4, 12, 14, 0.08) 42%, rgba(4, 12, 14, 0.86) 100%);
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+.pricing-intro {
+  max-width: 920px;
+  margin: -14px 0 26px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+@media (max-width: 1060px) {
+  .hero {
+    min-height: 78vh;
+    padding-top: 92px;
+    padding-bottom: 92px;
+  }
+
+  .hero::before {
+    background-position: 62% center;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 84vh;
+    padding-top: 58px;
+    padding-bottom: 72px;
+  }
+
+  .hero::before {
+    background-position: 67% center;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(90deg, rgba(4, 12, 14, 0.95) 0%, rgba(4, 12, 14, 0.8) 58%, rgba(4, 12, 14, 0.42) 100%),
+      linear-gradient(180deg, rgba(4, 12, 14, 0.28) 0%, rgba(4, 12, 14, 0.1) 44%, rgba(4, 12, 14, 0.9) 100%);
+  }
+}
