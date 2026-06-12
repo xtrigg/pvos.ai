@@ -41,15 +41,22 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
+  min-height: 76px;
+  padding: 0 clamp(18px, 4vw, 56px);
+  background: rgba(7, 16, 20, 0.78);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.site-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  width: 100%;
+  max-width: 1240px;
   min-height: 76px;
-  padding: 16px clamp(18px, 4vw, 56px);
-  background: rgba(7, 16, 20, 0.78);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(18px);
+  margin: 0 auto;
 }
 
 .brand,
@@ -761,7 +768,7 @@ li::before {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background-image: url("/assets/pvos-hero-system.png");
+  background-image: url("/assets/pvos-enterprise-coverage-hero.png");
   background-size: cover;
   background-position: center right;
   transform: scale(1.01);
@@ -779,6 +786,118 @@ li::before {
 
 .hero-copy {
   max-width: 760px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-intelligence {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.float-label {
+  position: absolute;
+  width: 218px;
+  padding: 12px 13px;
+  border: 1px solid rgba(153, 229, 211, 0.26);
+  border-radius: 8px;
+  background: rgba(6, 18, 20, 0.58);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(12px);
+}
+
+.float-label::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 18px rgba(70, 240, 189, 0.85);
+}
+
+.float-label strong {
+  display: block;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.float-label span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.label-meeting {
+  top: 19%;
+  right: 16%;
+}
+
+.label-calls {
+  bottom: 31%;
+  right: 24%;
+}
+
+.label-field {
+  bottom: 17%;
+  right: 16%;
+}
+
+.label-gateway {
+  top: 45%;
+  right: 7%;
+}
+
+.hero-architecture {
+  position: absolute;
+  right: clamp(22px, 6vw, 92px);
+  bottom: clamp(26px, 5vw, 70px);
+  display: grid;
+  grid-template-columns: 142px 46px 172px 46px 164px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(153, 229, 211, 0.24);
+  border-radius: 8px;
+  background: rgba(5, 14, 16, 0.66);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(14px);
+}
+
+.arch-node {
+  min-height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: var(--soft);
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.22;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.arch-node span {
+  color: var(--green);
+  font-weight: 800;
+}
+
+.arch-node.protected {
+  border-color: rgba(70, 240, 189, 0.52);
+  background: rgba(70, 240, 189, 0.1);
+}
+
+.arch-rail {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(70, 240, 189, 0), rgba(70, 240, 189, 0.88), rgba(70, 240, 189, 0));
 }
 
 .pricing-intro {
@@ -799,10 +918,22 @@ li::before {
   .hero::before {
     background-position: 62% center;
   }
+
+  .float-label {
+    display: none;
+  }
+
+  .hero-architecture {
+    right: 18px;
+    left: 18px;
+    bottom: 24px;
+    grid-template-columns: 1fr 28px 1.2fr 28px 1.1fr;
+  }
 }
 
 @media (max-width: 620px) {
   .hero {
+    display: block;
     min-height: 84vh;
     padding-top: 58px;
     padding-bottom: 72px;
@@ -816,5 +947,31 @@ li::before {
     background:
       linear-gradient(90deg, rgba(4, 12, 14, 0.95) 0%, rgba(4, 12, 14, 0.8) 58%, rgba(4, 12, 14, 0.42) 100%),
       linear-gradient(180deg, rgba(4, 12, 14, 0.28) 0%, rgba(4, 12, 14, 0.1) 44%, rgba(4, 12, 14, 0.9) 100%);
+  }
+
+  .hero-intelligence {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    margin-top: 20px;
+  }
+
+  .hero-architecture {
+    position: relative;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 10px;
+  }
+
+  .arch-rail {
+    width: 2px;
+    height: 16px;
+    justify-self: center;
+    background: linear-gradient(180deg, rgba(70, 240, 189, 0), rgba(70, 240, 189, 0.88), rgba(70, 240, 189, 0));
   }
 }

@@ -19,7 +19,7 @@ let heroImageSize = 0;
 try {
   html = read("index.html");
   css = read("assets/styles.css");
-  heroImageSize = statSync(join(root, "assets/pvos-hero-system.png")).size;
+  heroImageSize = statSync(join(root, "assets/pvos-enterprise-coverage-hero.png")).size;
 } catch (error) {
   console.error(`Missing required site file: ${error.path || error.message}`);
   process.exit(1);
@@ -34,7 +34,11 @@ check("targets 100-1000 person companies", /100[\s-]1000/.test(html));
 check("has three pricing tiers", (html.match(/class="price-card/g) || []).length === 3);
 check("uses trigg@gmic.ai contact", /trigg@gmic\.ai/.test(html));
 check("mentions edge redaction", /edge/i.test(html) && /redact/i.test(html));
-check("uses generated hero image", /pvos-hero-system\.png/.test(css) && heroImageSize > 500000);
+check("uses enterprise coverage hero image", /pvos-enterprise-coverage-hero\.png/.test(css) && heroImageSize > 500000);
+check("locks header content width", /site-header-inner/.test(html) && /max-width:\s*1240px/.test(css));
+check("has floating explanatory labels", (html.match(/class="float-label/g) || []).length >= 4);
+check("has first-screen architecture map", /hero-architecture/.test(html) && /Customer Boundary/.test(html));
+check("explains full enterprise coverage", /Field Team/.test(html) && /Meeting Rooms/.test(html) && /Customer Calls/.test(html));
 check("separates recorder pricing", /Recorder fleet priced separately/i.test(html));
 check("separates edge appliance pricing", /Required edge appliance/i.test(html));
 check("mentions processing allowance", /monthly processing allowance/i.test(html));
