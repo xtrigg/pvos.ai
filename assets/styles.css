@@ -758,7 +758,10 @@ li::before {
   max-width: none;
   min-height: 82vh;
   margin: 0;
-  padding: clamp(72px, 10vw, 132px) clamp(18px, 7vw, 136px) clamp(72px, 8vw, 118px);
+  padding-top: clamp(72px, 10vw, 132px);
+  padding-right: max(18px, calc((100vw - 1600px) / 2 + 96px));
+  padding-bottom: clamp(72px, 8vw, 118px);
+  padding-left: max(18px, calc((100vw - 1600px) / 2 + 96px));
   overflow: hidden;
   isolation: isolate;
 }
@@ -768,10 +771,8 @@ li::before {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background-image: url("/assets/pvos-enterprise-coverage-hero.png");
-  background-size: cover;
-  background-position: center right;
-  transform: scale(1.01);
+  background:
+    linear-gradient(90deg, #051014 0%, rgba(5, 16, 20, 0.68) 18%, rgba(5, 16, 20, 0) 50%, rgba(5, 16, 20, 0.72) 84%, #051014 100%);
 }
 
 .hero::after {
@@ -790,10 +791,45 @@ li::before {
   z-index: 2;
 }
 
-.hero-intelligence {
+.hero-stage {
   position: absolute;
   inset: 0;
+  z-index: -3;
+  width: min(100%, 1600px);
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: url("pvos-enterprise-coverage-hero.png");
+  background-size: cover;
+  background-position: center right;
+  transform: scale(1.01);
+}
+
+.hero-stage::before,
+.hero-stage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  pointer-events: none;
+}
+
+.hero-stage::before {
+  left: 0;
+  background: linear-gradient(90deg, #051014 0%, rgba(5, 16, 20, 0) 100%);
+}
+
+.hero-stage::after {
+  right: 0;
+  background: linear-gradient(270deg, #051014 0%, rgba(5, 16, 20, 0) 100%);
+}
+
+.hero-intelligence {
+  position: absolute;
+  inset: 0 auto 0 50%;
   z-index: 1;
+  width: min(100%, 1600px);
+  transform: translateX(-50%);
   pointer-events: none;
 }
 
@@ -953,6 +989,8 @@ li::before {
     position: relative;
     inset: auto;
     z-index: 2;
+    width: 100%;
+    transform: none;
     margin-top: 20px;
   }
 

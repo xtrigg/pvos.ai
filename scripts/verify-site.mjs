@@ -26,16 +26,18 @@ try {
 }
 
 check("sets PVOS title", /<title>PVOS\.ai/.test(html));
-check("defines Private Voice OS", /Private Voice OS/.test(html));
+check("defines Privileged Voice OS", /Privileged Voice OS/.test(html));
 check("explains AI recorder", /AI Recorder/i.test(html));
 check("explains privacy gateway", /Privacy Gateway/i.test(html));
 check("explains Memory OS", /Memory OS/i.test(html));
 check("targets 100-1000 person companies", /100[\s-]1000/.test(html));
 check("has three pricing tiers", (html.match(/class="price-card/g) || []).length === 3);
-check("uses trigg@gmic.ai contact", /trigg@gmic\.ai/.test(html));
+check("uses pvos@gmic.ai contact", /pvos@gmic\.ai/.test(html) && !/trigg@gmic\.ai/.test(html));
 check("mentions edge redaction", /edge/i.test(html) && /redact/i.test(html));
 check("uses enterprise coverage hero image", /pvos-enterprise-coverage-hero\.png/.test(css) && heroImageSize > 500000);
+check("supports file protocol asset paths", /href="assets\/styles\.css"/.test(html) && /src="assets\/app\.js"/.test(html) && /url\("pvos-enterprise-coverage-hero\.png"\)/.test(css));
 check("locks header content width", /site-header-inner/.test(html) && /max-width:\s*1240px/.test(css));
+check("caps ultra-wide hero background", /hero-stage/.test(html) && /max-width:\s*1600px/.test(css));
 check("has floating explanatory labels", (html.match(/class="float-label/g) || []).length >= 4);
 check("has first-screen architecture map", /hero-architecture/.test(html) && /Customer Boundary/.test(html));
 check("explains full enterprise coverage", /Field Team/.test(html) && /Meeting Rooms/.test(html) && /Customer Calls/.test(html));
