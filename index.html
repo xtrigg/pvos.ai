@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PVOS.ai - Private Voice OS for Enterprise Memory</title>
+  <meta name="description" content="PVOS.ai combines an AI Recorder, Privacy Gateway, and Memory OS for 100-1000 person companies that need voice intelligence without leaking raw conversations.">
+  <meta name="theme-color" content="#071014">
+  <meta property="og:title" content="PVOS.ai - Private Voice OS for Enterprise Memory">
+  <meta property="og:description" content="Capture conversations, redact sensitive data at the edge, and send only safe context to your AI stack.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pvos.ai/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="PVOS.ai home">
+      <span class="brand-mark">PV</span>
+      <span>PVOS.ai</span>
+    </a>
+    <nav class="nav-links" aria-label="Page sections">
+      <a href="#architecture">Architecture</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="mailto:trigg@gmic.ai?subject=PVOS.ai%20early%20access">Request access</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A GMIC AI private voice infrastructure product</p>
+        <h1>Private Voice OS for enterprise memory.</h1>
+        <p class="hero-lede">PVOS.ai combines an <strong>AI Recorder</strong>, an on-prem <strong>Privacy Gateway</strong>, and a <strong>Memory OS</strong> so 100-1000 person companies can use voice AI without sending raw conversations straight to the cloud.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:trigg@gmic.ai?subject=PVOS.ai%20pilot%20request">Book a pilot</a>
+          <a class="button secondary" href="#architecture">See the system</a>
+        </div>
+        <div class="trust-row" aria-label="Key claims">
+          <span>Edge redaction</span>
+          <span>Bring your own AI</span>
+          <span>On-prem or cloud inference</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" role="img" aria-label="PVOS privacy gateway architecture visualization">
+        <div class="device recorder">
+          <span class="device-label">AI Recorder</span>
+          <span class="signal-bar"></span>
+          <span class="signal-bar short"></span>
+          <span class="signal-bar"></span>
+        </div>
+        <div class="flow-line line-one"></div>
+        <div class="gateway">
+          <div class="gateway-core">
+            <span>Privacy Gateway</span>
+            <strong>P0 P1 P2 P3</strong>
+          </div>
+          <div class="scan scan-a"></div>
+          <div class="scan scan-b"></div>
+        </div>
+        <div class="flow-line line-two"></div>
+        <div class="cloud-stack">
+          <div>Customer AI</div>
+          <div>Memory OS</div>
+          <div>Workflow Apps</div>
+        </div>
+        <div class="privacy-pill">raw audio stays inside your boundary</div>
+      </div>
+    </section>
+
+    <section class="problem band">
+      <div>
+        <p class="section-kicker">The gap</p>
+        <h2>Voice AI is powerful. Raw voice data is dangerous.</h2>
+      </div>
+      <p>Most AI recorders upload audio first and solve privacy later. PVOS.ai moves the privacy decision to the customer edge: local ASR, PII detection, policy scoring, redaction, and routing happen before any third-party model sees the content.</p>
+    </section>
+
+    <section id="architecture" class="architecture">
+      <div class="section-heading">
+        <p class="section-kicker">Architecture</p>
+        <h2>Three layers, one turnkey edge deployment.</h2>
+      </div>
+      <div class="architecture-grid">
+        <article class="layer-card">
+          <span class="card-index">01</span>
+          <h3>AI Recorder</h3>
+          <p>Wearable, desk, vehicle, or room microphones capture field conversations, meetings, service calls, and sales interactions.</p>
+          <ul>
+            <li>Always-available capture</li>
+            <li>Device fleet management</li>
+            <li>Local buffering and secure sync</li>
+          </ul>
+        </article>
+        <article class="layer-card featured">
+          <span class="card-index">02</span>
+          <h3>Privacy Gateway</h3>
+          <p>The customer-side gateway runs transcription, PII detection, policy rules, and Privacy Score routing before data leaves the network.</p>
+          <ul>
+            <li>Mask PII and secrets</li>
+            <li>Keep P3 content local only</li>
+            <li>Audit every redaction decision</li>
+          </ul>
+        </article>
+        <article class="layer-card">
+          <span class="card-index">03</span>
+          <h3>Memory OS</h3>
+          <p>Safe context becomes searchable knowledge, summaries, CRM notes, task triggers, and AI agent memory across the company.</p>
+          <ul>
+            <li>Team memory workspace</li>
+            <li>Customer-owned model routing</li>
+            <li>API and workflow integrations</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="pipeline">
+      <div class="section-heading narrow">
+        <p class="section-kicker">Data flow</p>
+        <h2>Send useful context, not uncontrolled recordings.</h2>
+      </div>
+      <div class="pipeline-grid" aria-label="PVOS data flow">
+        <div class="pipe-step">Raw audio</div>
+        <div class="pipe-arrow">to</div>
+        <div class="pipe-step">Local ASR</div>
+        <div class="pipe-arrow">to</div>
+        <div class="pipe-step active">Privacy Score</div>
+        <div class="pipe-arrow">to</div>
+        <div class="pipe-step">Safe AI context</div>
+      </div>
+      <div class="score-grid">
+        <div><strong>P0</strong><span>public context</span></div>
+        <div><strong>P1</strong><span>normal business</span></div>
+        <div><strong>P2</strong><span>masked before upload</span></div>
+        <div><strong>P3</strong><span>local-only retention</span></div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="use-cases">
+      <div class="section-heading">
+        <p class="section-kicker">Built for mid-market teams</p>
+        <h2>Where PVOS.ai becomes hard to replace.</h2>
+      </div>
+      <div class="use-grid">
+        <article>
+          <h3>Field service</h3>
+          <p>HVAC, telecom, construction, and maintenance teams turn site conversations into tickets, quotes, and safety notes.</p>
+        </article>
+        <article>
+          <h3>Healthcare operations</h3>
+          <p>Capture workflow context while keeping medical and patient details controlled inside the customer boundary.</p>
+        </article>
+        <article>
+          <h3>Insurance and finance</h3>
+          <p>Mask payment, identity, and policy details before summaries are sent to cloud LLMs or downstream systems.</p>
+        </article>
+        <article>
+          <h3>Sales and customer success</h3>
+          <p>Preserve relationship memory, objections, buying signals, and follow-up tasks without leaking private call content.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="deployment band">
+      <div>
+        <p class="section-kicker">Deployment model</p>
+        <h2>Customer-owned inference, your choice of AI stack.</h2>
+      </div>
+      <div class="deploy-list">
+        <p><strong>PVOS Cloud:</strong> fastest pilot path with managed storage, summaries, search, and workflow automation.</p>
+        <p><strong>Customer Cloud:</strong> route redacted context into OpenAI, Claude, Gemini, Azure, AWS, or a private endpoint.</p>
+        <p><strong>On-prem AI:</strong> run local ASR, redaction, embeddings, and selected open models where data residency matters most.</p>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <div class="section-heading">
+        <p class="section-kicker">Early access pricing</p>
+        <h2>Designed for 100-1000 person companies.</h2>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <p class="tier">Pilot</p>
+          <h3>$1,200<span>/mo</span></h3>
+          <p class="hardware">Gateway kit from $2,900</p>
+          <ul>
+            <li>Up to 100 users</li>
+            <li>25 AI recorders</li>
+            <li>Privacy rules and PII masking</li>
+            <li>Managed PVOS Cloud workspace</li>
+          </ul>
+          <a href="mailto:trigg@gmic.ai?subject=PVOS.ai%20Pilot%20Plan">Start pilot</a>
+        </article>
+        <article class="price-card preferred">
+          <p class="tier">Business</p>
+          <h3>$3,900<span>/mo</span></h3>
+          <p class="hardware">Edge appliance from $7,500</p>
+          <ul>
+            <li>Up to 500 users</li>
+            <li>150 AI recorders</li>
+            <li>Privacy Score P0-P3 routing</li>
+            <li>CRM, ticketing, and knowledge integrations</li>
+          </ul>
+          <a href="mailto:trigg@gmic.ai?subject=PVOS.ai%20Business%20Plan">Request demo</a>
+        </article>
+        <article class="price-card">
+          <p class="tier">Enterprise</p>
+          <h3>$9,800<span>/mo</span></h3>
+          <p class="hardware">HA deployment scoped separately</p>
+          <ul>
+            <li>Up to 1000 users</li>
+            <li>Multi-site gateways</li>
+            <li>Customer cloud or on-prem AI routing</li>
+            <li>Audit logs, SSO, and policy review</li>
+          </ul>
+          <a href="mailto:trigg@gmic.ai?subject=PVOS.ai%20Enterprise%20Plan">Scope deployment</a>
+        </article>
+      </div>
+      <p class="pricing-note">Early access pricing is for qualified deployments. Final hardware, storage, retention, and integration pricing depends on site count, recorder fleet size, and customer AI stack.</p>
+    </section>
+
+    <section id="contact" class="final-cta">
+      <p class="section-kicker">PVOS.ai</p>
+      <h2>Make voice AI usable before raw voice becomes a liability.</h2>
+      <p>We are opening pilot conversations with operators, service teams, healthcare groups, insurance teams, and field sales organizations that need private voice memory infrastructure.</p>
+      <a class="button primary" href="mailto:trigg@gmic.ai?subject=PVOS.ai%20early%20access">Contact trigg@gmic.ai</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>PVOS.ai is a GMIC AI product concept. Contact: <a href="mailto:trigg@gmic.ai">trigg@gmic.ai</a></p>
+    <p>Privacy and compliance features reduce exposure but do not replace legal, security, or regulatory review.</p>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
